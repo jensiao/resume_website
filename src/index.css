@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Kanit', sans-serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #0C0C0C;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0C0C0C;
+  color: #D7E2EA;
+  font-family: 'Kanit', 'Noto Sans SC', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  overflow-x: clip;
+}
+
+/* ─── Hero text styles ─── */
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Light theme ─── */
+
+:root[data-theme="light"] .hero-heading {
+  background: linear-gradient(180deg, #2d3039 0%, #5a6070 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:root[data-theme="light"] html,
+:root[data-theme="light"] body {
+  background: #F5F5F7;
+  color: #1d1d1f;
+}
+
+/* ─── Scrollbar ─── */
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+::selection { background: rgba(182, 0, 168, 0.25); color: #fff; }
+
+/* ─── Hide scrollbar for carousel ─── */
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }

@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Jin Xiao",
+    "roleTag": "Business Analytics / Data Science",
+    "titleLine1": "BUSINESS",
+    "titleLine2": "ANALYTICS",
+    "eduNowLabel": "Studying",
+    "eduNow": "MSc Mgmt Science & Eng · NJUST",
+    "eduPrevLabel": "Bachelor",
+    "eduPrev": "BBA · JUFE",
+    "viewResume": "View Resume",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "breadcrumb": "/ About Me",
+    "title": "Understand business through data. Drive decisions with insight.",
+    "nameChinese": "Jin Xiao",
+    "namePinyin": "Jin Xiao",
+    "roleTags": "Business Analytics · Data Science · Product Insight",
+    "trait1": "Data-Driven",
+    "trait2": "Logical Thinking",
+    "trait3": "Visualization",
+    "trait4": "Business Insight",
+    "para1": "BBA from Jiangxi University of Finance and Economics, admitted to Nanjing University of Science and Technology for an MSc in Management Science and Engineering. Passionate about business data analysis and data-driven decision making.",
+    "para2": "Skilled in SQL, Python, and Tableau for processing and analyzing complex business data, extracting actionable insights from large-scale information, and driving decisions through clear visualization.",
+    "para3": "Aspiring to deepen expertise in business analytics and data science, combining management science with data analysis capabilities to create quantifiable business value.",
+    "edu1School": "Jiangxi Univ. of Finance & Economics",
+    "edu1Degree": "BBA Business Administration",
+    "edu1Period": "2024 - 2026",
+    "edu2School": "Nanjing Univ. of Science & Technology",
+    "edu2Degree": "MSc Mgmt Science & Engineering",
+    "edu2Period": "2026 - 2029"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewDetail": "View Details",
+    "project1": {
+      "period": "2025.10 - 2025.11",
+      "name": "Beauty E-commerce: User Behavior & Conversion Analysis",
+      "role": "Data Analyst",
+      "brief": "Built recommendation-scenario conversion analysis based on beauty e-commerce user behavior logs",
+      "tags": ["SQL", "Python", "Tableau", "A/B Testing"],
+      "color": "#4F6EF7",
+      "highlights": [
+        "Designed PV, UV, CTR, CVR, GMV, AOV, and retention rate metrics for recommendation scenario conversion funnels",
+        "Used SQL for data cleaning, joins, and aggregation across user, product, behavior, and time dimensions",
+        "Conducted A/B experiment analysis with Python, comparing CTR, CVR, and GMV differences between groups",
+        "Built Tableau dashboards for recommendation effectiveness and user conversion, identified key drop-off points"
+      ],
+      "metrics": [
+        { "value": "5-Level", "label": "Funnel Depth" },
+        { "value": "12+", "label": "Core KPIs" },
+        { "value": "4 Dims", "label": "Analysis Views" },
+        { "value": "3 Tools", "label": "Tech Stack" }
+      ],
+      "background": "This project analyzes real user behavior logs from a beauty e-commerce platform, systematically examining user conversion paths within recommendation scenarios. Recommendation systems are the core traffic distribution mechanism for e-commerce platforms. Understanding user behavior patterns and conversion bottlenecks in recommendation scenarios is critical for optimizing recommendation strategies and increasing platform GMV.",
+      "methodology": "Following the CRISP-DM data analysis methodology, the project progresses from business understanding through data preparation, modeling, and evaluation. Stratified drill-down analysis decomposes conversion differences by user activity level, product category, and region. Two-sample Z-tests evaluate the statistical significance of conversion rate differences between experiment and control groups.",
+      "callout": "In A/B experiment analysis, Bonferroni correction is applied to address the multiple comparisons problem across multiple metrics, preventing false positive inflation from repeated testing and ensuring statistical reliability of experimental conclusions.",
+      "edaTitle": "Data Extraction & Exploratory Analysis",
+      "edaText": "Extracted five-level behavioral data (impression, click, favorite, add-to-cart, purchase) from raw logs using SQL. Completed missing value handling, outlier detection, and data consistency validation. Descriptive analysis revealed that recommendation scenarios contribute approximately 52% of platform traffic, yet overall conversion rate is only 68% of non-recommendation scenarios, indicating significant optimization potential.",
+      "vizTitle1": "Conversion Funnel Analysis",
+      "vizInsights1": [
+        "Five-level conversion funnel shows typical declining pattern, impression→click CTR approximately 4.2%",
+        "Click→add-to-cart is the largest drop-off point with 73% loss rate",
+        "Add-to-cart→purchase conversion is relatively stable, suggesting good price-product fit"
+      ],
+      "vizTitle2": "User Segmentation & Regional Differences",
+      "vizInsights2": [
+        "High-activity users contribute 58% of GMV but have lower recommendation conversion rates than medium-activity users",
+        "Tier-1 city users show significantly higher CTR than lower-tier cities, but purchase conversion differences are not significant",
+        "Beauty tool category shows highest recommendation efficiency; skincare has strongest cross-sell conversion"
+      ],
+      "statsTitle": "A/B Experiment Statistical Analysis",
+      "statsText": "Hypothesis testing via Python comparing experiment group (optimized algorithm) vs control group (original algorithm). Experiment group significantly outperformed on both CTR and CVR (p < 0.01), with GMV increase of approximately 12.3%. Effect size analysis (Cohen's d) indicates optimization benefits are most pronounced for medium-activity user segments.",
+      "conclusion": "Recommendation scenarios represent a core growth engine for e-commerce platforms with significant conversion optimization potential. Systematic improvements through refined user segmentation, optimized ranking strategies, and differentiated operations can enhance traffic monetization efficiency.",
+      "recommendations": [
+        "Enhance recommendation diversity for high-activity users and strengthen cross-category recommendation capabilities",
+        "Establish lifecycle-stage-based tiered recommendation strategies with differentiated reach frequency and content",
+        "Improve product information richness in recommendation scenarios to reduce decision friction at click→add-to-cart stage"
+      ]
+    },
+    "project2": {
+      "period": "2024.09 - 2024.10",
+      "name": "Global Game Sales Analysis & Platform Strategy Research",
+      "role": "Data Analyst",
+      "brief": "Analyzed global game market trends, platform competition, and regional preferences using Kaggle sales data",
+      "tags": ["MySQL", "Tableau", "Python", "SPSS"],
+      "color": "#F77F4F",
+      "highlights": [
+        "Cleaned raw sales data using MySQL: handled outliers, missing values, year validation; unified 1980-2016 sample scope",
+        "Built KPIs: annual sales trends, platform lifecycle, platform×genre matrix, regional preference index, publisher market share",
+        "Created 3-page Tableau dashboard covering market overview, platform & genre analysis, regional & publisher analysis",
+        "Found global market peak in 2008-2009; PS2, X360, PS3 dominated; Japan showed strong Role-Playing preference"
+      ],
+      "metrics": [
+        { "value": "16,598", "label": "Valid Samples" },
+        { "value": "36 Years", "label": "Time Span" },
+        { "value": "3 Pages", "label": "Dashboard" },
+        { "value": "8+", "label": "Core KPIs" }
+      ],
+      "background": "Based on the Kaggle global game sales dataset covering over 16,000 game titles from 1980-2016 with information on sales, platforms, publishers, genres, and regional distribution. This analysis aims to provide data-driven insights for game product planning, platform selection, and market entry strategy.",
+      "methodology": "Employing descriptive statistics and exploratory data analysis (EDA) methods, the analysis framework covers four dimensions: temporal trends, platform lifecycles, genre matrices, and regional preferences. MySQL for data cleaning and KPI calculation, Tableau for interactive dashboards, and SPSS for significance testing of regional preference indices.",
+      "callout": "In platform lifecycle analysis, moving average smoothing is applied to reduce annual sales volatility, enabling clearer identification of complete lifecycle curves from introduction through growth to decline phases, providing reference for platform investment timing decisions.",
+      "edaTitle": "Data Cleaning & Exploratory Analysis",
+      "edaText": "Data cleaning performed in MySQL: removed incomplete years post-2017, unified regional sales definitions (NA, EU, JP, Other), handled missing values and outliers. Final dataset contains 16,598 valid game records across 31 platforms, 12 genres, and 579 publishers.",
+      "vizTitle1": "Market Trends & Platform Analysis",
+      "vizInsights1": [
+        "Global game market peaked in 2008-2009, followed by overall declining trend",
+        "PS2 leads with 1,231 titles, followed by X360 and PS3",
+        "Average platform lifecycle spans 8-10 years, with the first 3-4 years being the golden window for game releases"
+      ],
+      "vizTitle2": "Regional Preferences & Publisher Landscape",
+      "vizInsights2": [
+        "Japan shows Role-Playing genre preference index of 2.8, significantly above global average",
+        "North American market favors Action and Sports genres with highest sales volume",
+        "Publisher market concentration follows long-tail distribution; Top 10 publishers hold approximately 45% market share"
+      ],
+      "statsTitle": "Regional Preference Index Analysis",
+      "statsText": "Constructed Regional Genre Preference Index using standardized processing to eliminate overall sales volume differences. Japan's Role-Playing preference index reaches 2.8 (p < 0.001), Europe's Racing preference index at 1.6. Preference index significance validated via chi-square testing, providing statistical support for regional product strategies.",
+      "conclusion": "The global game market exhibits clear platform lifecycle patterns and regional genre preferences. Game publishing decisions should comprehensively consider target platform lifecycle stages, target market genre preference characteristics, and publisher competitive dynamics to formulate differentiated market entry and investment strategies.",
+      "recommendations": [
+        "Prioritize platforms in early-to-mid growth phase as launch targets to maximize market window opportunities",
+        "Increase Role-Playing genre investment for Japanese market; prioritize Action and Sports genres for Western markets",
+        "Explore differentiation opportunities among long-tail publishers to establish first-mover advantages in niche genres"
+      ]
+    }
+  },
+  "detail": {
+    "back": "Back to Home",
+    "overview": "Overview",
+    "highlights": "Key Highlights",
+    "background": "Project Background",
+    "methodology": "Methodology",
+    "calloutLabel": "Key Method Note",
+    "eda": "Data Extraction & EDA",
+    "visualizations": "Visualization Analysis",
+    "stats": "Statistical Analysis",
+    "conclusion": "Conclusions",
+    "recommendations": "Recommendations",
+    "prevProject": "Previous Project",
+    "nextProject": "Next Project",
+    "flowStep1": "Data Collection",
+    "flowStep2": "Data Cleaning",
+    "flowStep3": "Modeling & Analysis",
+    "flowStep4": "Visualization"
+  },
+  "footer": {
+    "copyright": "Jin Xiao. All rights reserved."
+  }
+}
