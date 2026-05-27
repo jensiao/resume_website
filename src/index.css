@@ -24,6 +24,7 @@ body {
   font-family: 'Kanit', 'Noto Sans SC', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
 }
 
 #root {
@@ -37,6 +38,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 /* ─── Light theme ─── */
@@ -64,3 +67,28 @@ body {
 /* ─── Hide scrollbar for carousel ─── */
 
 .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* ─── Glass panel for text readability over shader backgrounds ─── */
+
+.glass-panel {
+  background: rgba(12, 12, 12, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+p {
+  line-height: 1.8;
+  color: #D1D5DB;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+:root[data-theme="light"] .glass-panel {
+  background: rgba(245, 245, 247, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}

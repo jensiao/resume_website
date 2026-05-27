@@ -2,9 +2,15 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 
-const links = ['about', 'projects'] as const
+const links = [
+  { key: 'home', path: '/' },
+  { key: 'about', path: '/about' },
+  { key: 'projects', path: '/projects' },
+  { key: 'contact', path: '/contact' },
+] as const
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
@@ -12,6 +18,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const isZh = i18n.language === 'zh'
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 40)
@@ -19,9 +27,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', h)
   }, [])
 
-  const go = (id: string) => {
+  const goHome = () => {
     setOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    if (location.pathname === '/') {
+      document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/')
+    }
+  }
+
+  const isActive = (path: string) => {
+    if (path === '/') return location.pathname === '/'
+    return location.pathname === path || location.pathname.startsWith(path + '/')
   }
 
   return (
@@ -33,9 +50,12 @@ export default function Navbar() {
         scrolled ? 'bg-[#0C0C0C]/85 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.04)]' : ''
       }`}
     >
-      <div className="flex items-center justify-between px-5 sm:px-8 md:px-10 py-4 md:py-5">
+      <div className="flex items-center justify-between px-6 sm:px-10 md:px-12 py-5 md:py-6">
         {/* Logo */}
-        <button onClick={() => go('hero')} className="font-display font-bold text-xl sm:text-2xl tracking-tight cursor-pointer select-none shrink-0">
+        <button
+          onClick={goHome}
+          className="font-display font-bold text-2xl sm:text-3xl tracking-tight cursor-pointer select-none shrink-0"
+        >
           <span className="text-[#D7E2EA]">J</span>
           <span className="text-[#B600A8]">i</span>
           <span className="text-[#D7E2EA]">nX</span>
@@ -44,22 +64,24 @@ export default function Navbar() {
           <span className="text-[#E84040]">.</span>
         </button>
 
-        {/* Desktop nav links — centered */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-10 absolute left-1/2 -translate-x-1/2">
-          {links.map(k => (
-            <button
-              key={k}
-              onClick={() => go(k)}
-              className="text-[#D7E2EA]/70 hover:text-[#D7E2EA] font-medium uppercase tracking-wider text-sm transition-colors duration-200 cursor-pointer"
+        {/* Desktop nav — centered */}
+        <div className="hidden md:flex items-center gap-10 lg:gap-12 absolute left-1/2 -translate-x-1/2">
+          {links.map(({ key, path }) => (
+            <Link
+              key={key}
+              to={path}
+              onClick={() => setOpen(false)}
+              className={`font-medium uppercase tracking-wider text-base transition-colors duration-200 cursor-pointer ${
+                isActive(path) ? 'text-[#D7E2EA]' : 'text-[#D7E2EA]/70 hover:text-[#D7E2EA]'
+              }`}
             >
-              {t(`nav.${k}`)}
-            </button>
+              {t(`nav.${key}`)}
+            </Link>
           ))}
         </div>
 
         {/* Right side widgets */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {/* Language toggle */}
           <button
             onClick={() => i18n.changeLanguage(isZh ? 'en' : 'zh')}
             className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-[#D7E2EA]/20 text-xs font-semibold tracking-wider hover:border-[#D7E2EA]/40 transition-colors cursor-pointer"
@@ -69,7 +91,6 @@ export default function Navbar() {
             <span className={!isZh ? 'text-[#B600A8]' : 'text-[#D7E2EA]/50'}>EN</span>
           </button>
 
-          {/* Theme toggle */}
           <button
             onClick={toggleTheme}
             className="flex items-center justify-center w-9 h-9 rounded-full border border-[#D7E2EA]/20 hover:border-[#D7E2EA]/40 transition-colors cursor-pointer"
@@ -77,7 +98,6 @@ export default function Navbar() {
             {theme === 'dark' ? <Moon size={15} /> : <Sun size={15} />}
           </button>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden flex items-center justify-center w-9 h-9 rounded-full border border-[#D7E2EA]/20 cursor-pointer ml-1"
@@ -87,7 +107,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu drawer */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -97,17 +117,23 @@ export default function Navbar() {
             className="md:hidden overflow-hidden border-t border-[#D7E2EA]/6"
           >
             <div className="flex flex-col gap-0 px-5 pb-5 pt-3">
-              {links.map((k, i) => (
-                <motion.button
-                  key={k}
+              {links.map(({ key, path }, i) => (
+                <motion.div
+                  key={key}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.04 }}
-                  onClick={() => go(k)}
-                  className="text-[#D7E2EA]/70 hover:text-[#D7E2EA] font-medium uppercase tracking-wider text-base py-3 text-left cursor-pointer transition-colors"
                 >
-                  {t(`nav.${k}`)}
-                </motion.button>
+                  <Link
+                    to={path}
+                    onClick={() => setOpen(false)}
+                    className={`block font-medium uppercase tracking-wider text-lg py-3 text-left cursor-pointer transition-colors ${
+                      isActive(path) ? 'text-[#D7E2EA]' : 'text-[#D7E2EA]/70 hover:text-[#D7E2EA]'
+                    }`}
+                  >
+                    {t(`nav.${key}`)}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>

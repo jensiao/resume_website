@@ -47,8 +47,8 @@ export default function Hero() {
         {/* Greeting */}
         <motion.p
           variants={riseUp}
-          className="font-light tracking-[0.3em] opacity-45 mb-8 sm:mb-10 text-center"
-          style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)', color: '#D7E2EA' }}
+          className="font-light tracking-[0.3em] opacity-45 mb-10 sm:mb-12 text-center"
+          style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', color: '#D7E2EA' }}
         >
           {t('hero.greeting')}
         </motion.p>
@@ -56,9 +56,9 @@ export default function Hero() {
         {/* Name — gradient hero-heading */}
         <motion.h1
           variants={riseUp}
-          className="hero-heading font-display font-black tracking-[0.02em] leading-[1.05] select-none text-center mb-12 sm:mb-16"
+          className="hero-heading font-display font-black tracking-[0.02em] leading-[1.05] select-none text-center mb-14 sm:mb-20"
           style={{
-            fontSize: 'clamp(5rem, 16vw, 12rem)',
+            fontSize: 'clamp(6rem, 18vw, 16rem)',
             textShadow: '0 0 120px rgba(187, 204, 215, 0.15)',
           }}
         >
@@ -66,9 +66,9 @@ export default function Hero() {
         </motion.h1>
 
         {/* Role badges — wider */}
-        <motion.div variants={riseUp} className="flex items-center gap-4 sm:gap-5 mb-12 sm:mb-14">
+        <motion.div variants={riseUp} className="flex items-center gap-5 sm:gap-6 mb-14 sm:mb-16">
           <span
-            className="px-7 py-2.5 rounded-full text-sm sm:text-base font-medium tracking-wide"
+            className="px-8 py-3 rounded-full text-base sm:text-lg font-medium tracking-wide"
             style={{
               background: 'rgba(79, 140, 247, 0.1)',
               border: '1px solid rgba(79, 140, 247, 0.22)',
@@ -77,9 +77,9 @@ export default function Hero() {
           >
             商业分析
           </span>
-          <span className="text-[#D7E2EA]/20 text-lg select-none">·</span>
+          <span className="text-[#D7E2EA]/20 text-xl select-none">·</span>
           <span
-            className="px-7 py-2.5 rounded-full text-sm sm:text-base font-medium tracking-wide"
+            className="px-8 py-3 rounded-full text-base sm:text-lg font-medium tracking-wide"
             style={{
               background: 'rgba(79, 140, 247, 0.08)',
               border: '1px solid rgba(79, 140, 247, 0.18)',
@@ -91,20 +91,20 @@ export default function Hero() {
         </motion.div>
 
         {/* CTAs — wider */}
-        <motion.div variants={riseUp} className="flex flex-col sm:flex-row items-center gap-4 mb-14 sm:mb-16">
+        <motion.div variants={riseUp} className="flex flex-col sm:flex-row items-center gap-4 mb-16 sm:mb-20">
           <motion.a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-flex items-center gap-2.5 rounded-full px-10 py-3.5 sm:px-12 sm:py-4 text-sm sm:text-base font-semibold tracking-wider text-white cursor-pointer select-none"
+            className="inline-flex items-center gap-3 rounded-full px-12 py-4 sm:px-14 sm:py-[18px] text-base sm:text-lg font-semibold tracking-wider text-white cursor-pointer select-none"
             style={{
               background: 'linear-gradient(123deg, #0a1a3a 7%, #1a5dc4 37%, #3b82f6 72%, #1e40af 100%)',
               boxShadow: '0px 4px 20px rgba(59, 130, 246, 0.3), 4px 4px 16px #1a5dc4 inset',
             }}
           >
-            <FileText size={17} />
+            <FileText size={20} />
             {t('hero.viewResume')}
           </motion.a>
 
@@ -112,9 +112,9 @@ export default function Hero() {
             href="mailto:15957232009@163.com"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-flex items-center gap-2.5 rounded-full border-2 border-[#D7E2EA]/25 px-10 py-3.5 sm:px-12 sm:py-4 text-sm sm:text-base font-semibold tracking-wider text-[#D7E2EA] hover:border-[#D7E2EA]/55 transition-colors cursor-pointer select-none"
+            className="inline-flex items-center gap-3 rounded-full border-2 border-[#D7E2EA]/25 px-12 py-4 sm:px-14 sm:py-[18px] text-base sm:text-lg font-semibold tracking-wider text-[#D7E2EA] hover:border-[#D7E2EA]/55 transition-colors cursor-pointer select-none"
           >
-            <Mail size={17} />
+            <Mail size={20} />
             {t('hero.contactMe')}
           </motion.a>
         </motion.div>
@@ -122,7 +122,7 @@ export default function Hero() {
         {/* Contact info — more visible */}
         <motion.p
           variants={riseUp}
-          className="text-xs sm:text-sm text-[#D7E2EA]/45 tracking-wide text-center leading-relaxed max-w-2xl"
+          className="text-sm sm:text-base text-[#D7E2EA]/45 tracking-wide text-center leading-relaxed max-w-2xl"
         >
           (+86) 15957232009 &nbsp;|&nbsp; 15957232009@163.com &nbsp;|&nbsp; 微信：jx00630705
         </motion.p>
