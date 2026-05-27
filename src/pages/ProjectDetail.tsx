@@ -204,7 +204,7 @@ export default function ProjectDetail() {
             </div>
             {/* User-supplied image overlays on top when it loads successfully */}
             <img
-              src={`/projects/${key}-cover.png`}
+              src={`${import.meta.env.BASE_URL}projects/${key}-cover.png`}
               alt={String(proj.name)}
               className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
               onLoad={(e) => { e.currentTarget.style.opacity = '1' }}
@@ -331,7 +331,7 @@ export default function ProjectDetail() {
                 <ImagePlaceholder
                   color={color}
                   label={t('projects.imagePlaceholder')}
-                  slot={`/projects/${key}-eda.png`}
+                  slot={`${import.meta.env.BASE_URL}projects/${key}-eda.png`}
                 />
               </div>
             </motion.section>
@@ -383,7 +383,7 @@ export default function ProjectDetail() {
                     <ImagePlaceholder
                       color={color}
                       label={t('projects.imagePlaceholder')}
-                      slot={`/projects/${key}-viz1.png`}
+                      slot={`${import.meta.env.BASE_URL}projects/${key}-viz1.png`}
                     />
                   </div>
                 </div>
@@ -398,7 +398,7 @@ export default function ProjectDetail() {
                     <ImagePlaceholder
                       color={color}
                       label={t('projects.imagePlaceholder')}
-                      slot={`/projects/${key}-viz2.png`}
+                      slot={`${import.meta.env.BASE_URL}projects/${key}-viz2.png`}
                     />
                     <div className="glass-panel rounded-2xl p-7">
                       <ul className="space-y-3">

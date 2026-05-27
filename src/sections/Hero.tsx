@@ -31,7 +31,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/hero-bg.mp4" type="video/mp4" />
+        <source src={import.meta.env.BASE_URL + 'hero-bg.mp4'} type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
@@ -93,7 +93,7 @@ export default function Hero() {
         {/* CTAs — wider */}
         <motion.div variants={riseUp} className="flex flex-col sm:flex-row items-center gap-4 mb-16 sm:mb-20">
           <motion.a
-            href="/resume.pdf"
+            href={import.meta.env.BASE_URL + 'resume.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}

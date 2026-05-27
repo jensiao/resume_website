@@ -198,7 +198,7 @@ export default function About() {
                         }}
                       >
                         <img
-                          src="/jufe-logo.png"
+                          src={import.meta.env.BASE_URL + 'jufe-logo.png'}
                           alt={t('about.edu1School')}
                           className="w-9 h-9 object-contain"
                         />
@@ -228,7 +228,7 @@ export default function About() {
                         }}
                       >
                         <img
-                          src="/njust-logo.jpg"
+                          src={import.meta.env.BASE_URL + 'njust-logo.jpg'}
                           alt={t('about.edu2School')}
                           className="w-9 h-9 object-contain"
                         />

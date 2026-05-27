@@ -158,7 +158,7 @@ export default function Contact() {
 
           {/* ── CTA button ── */}
           <motion.div variants={fadeUp}>
-            <GlassButton href="/resume.pdf">
+            <GlassButton href={import.meta.env.BASE_URL + 'resume.pdf'}>
               <p>{t('contact.viewResume')}</p>
             </GlassButton>
           </motion.div>
