@@ -40,6 +40,7 @@ export function ProjectCard({
           alt={title}
           className="h-full w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
           loading="lazy"
+          decoding="async"
         />
       </div>
 

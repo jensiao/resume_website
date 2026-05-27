@@ -68,6 +68,17 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
+/* ─── moveBackground animation ─── */
+
+@keyframes moveBackground {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 0% -1000%;
+  }
+}
+
 /* ─── Glass panel for text readability over shader backgrounds ─── */
 
 .glass-panel {
