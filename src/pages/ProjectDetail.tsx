@@ -196,7 +196,7 @@ export default function ProjectDetail() {
                 >
                   <ImageIcon size={26} style={{ color }} />
                 </div>
-                <p className="text-[#D7E2EA]/65 text-base font-medium mb-1">封面图占位</p>
+                <p className="text-[#D7E2EA]/65 text-base font-medium mb-1">{t('detail.coverPlaceholder')}</p>
                 <p className="text-[#D7E2EA]/30 text-xs font-mono">
                   /public/projects/{key}-cover.png
                 </p>
@@ -566,7 +566,7 @@ export default function ProjectDetail() {
                   <ArrowRight size={12} />
                 </p>
                 <h4 className="text-white font-display font-semibold text-base group-hover:text-[#4F8CF7] transition-colors">
-                  浏览全部项目
+                  {t('detail.browseAll')}
                 </h4>
               </Link>
             )}

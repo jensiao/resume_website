@@ -21,8 +21,8 @@ const fadeUp = {
 const projectKeys = ['project1', 'project2'] as const
 
 const imgMap: Record<string, string> = {
-  project1: '/美妆项目.jpg',
-  project2: '/游戏项目.jpg',
+  project1: '/project-beauty.jpg',
+  project2: '/project-game.jpg',
 }
 
 export default function Projects() {
@@ -59,7 +59,7 @@ export default function Projects() {
               Gallery · {projectKeys.length} {t('projects.projectCount')}
             </p>
             <h2 className="text-white font-display font-semibold text-2xl tracking-wide">
-              研究与项目
+              {t('projects.galleryTitle')}
             </h2>
           </motion.div>
 
@@ -76,7 +76,7 @@ export default function Projects() {
                   title={String(proj.name)}
                   description={String(proj.brief)}
                   link={`/projects/${key}`}
-                  linkText="查看详情"
+                  linkText={t('projects.viewDetail')}
                   color={color}
                   tags={proj.tags as string[]}
                   period={String(proj.period)}
@@ -89,8 +89,8 @@ export default function Projects() {
               <div className="w-12 h-12 rounded-full border border-[#D7E2EA]/15 flex items-center justify-center mb-4">
                 <span className="text-[#D7E2EA]/35 text-2xl font-light">+</span>
               </div>
-              <p className="text-[#D7E2EA]/35 text-sm font-medium mb-1">更多项目</p>
-              <p className="text-[#D7E2EA]/20 text-xs">持续更新中</p>
+              <p className="text-[#D7E2EA]/35 text-sm font-medium mb-1">{t('projects.moreProjects')}</p>
+              <p className="text-[#D7E2EA]/20 text-xs">{t('projects.comingSoon')}</p>
             </div>
           </motion.div>
 
@@ -99,13 +99,13 @@ export default function Projects() {
             variants={fadeUp}
             className="text-[#D7E2EA]/30 text-xs tracking-wider text-center"
           >
-            点击卡片查看项目详情
+            {t('projects.clickHint')}
           </motion.p>
 
           {/* ── Bottom CTA ── */}
           <motion.div variants={fadeUp} className="mt-32 text-center">
             <p className="text-[#D7E2EA]/45 text-sm tracking-wide mb-6">
-              想了解更多项目细节或合作机会？
+              {t('projects.ctaQuestion')}
             </p>
             <Link
               to="/contact"
@@ -115,7 +115,7 @@ export default function Projects() {
                 boxShadow: '0px 4px 20px rgba(59, 130, 246, 0.3), 4px 4px 16px #1a5dc4 inset',
               }}
             >
-              联系我
+              {t('nav.contact')}
             </Link>
           </motion.div>
         </div>

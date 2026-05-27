@@ -31,7 +31,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/首页背景.mp4" type="video/mp4" />
+        <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
@@ -75,7 +75,7 @@ export default function Hero() {
               color: '#D7E2EA',
             }}
           >
-            商业分析
+            {t('hero.tagBA')}
           </span>
           <span className="text-[#D7E2EA]/20 text-xl select-none">·</span>
           <span
@@ -86,7 +86,7 @@ export default function Hero() {
               color: '#D7E2EA',
             }}
           >
-            数据分析
+            {t('hero.tagDA')}
           </span>
         </motion.div>
 
@@ -124,7 +124,7 @@ export default function Hero() {
           variants={riseUp}
           className="text-sm sm:text-base text-[#D7E2EA]/45 tracking-wide text-center leading-relaxed max-w-2xl"
         >
-          (+86) 15957232009 &nbsp;|&nbsp; 15957232009@163.com &nbsp;|&nbsp; 微信：jx00630705
+          (+86) 15957232009 &nbsp;|&nbsp; 15957232009@163.com &nbsp;|&nbsp; {t('hero.contactLineWechat')}：jx00630705
         </motion.p>
       </motion.div>
     </section>

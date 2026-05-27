@@ -20,7 +20,7 @@ export function ProjectCard({
   title,
   description,
   link,
-  linkText = "查看详情",
+  linkText = "View Details",
   color = "#4F8CF7",
   tags,
   period,

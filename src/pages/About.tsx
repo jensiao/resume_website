@@ -31,22 +31,21 @@ const skills = [
     color: '#4F8CF7',
     titleKey: 'about.skillsCat1',
     descKey: 'about.skillsCat1Desc',
-    items: ['Excel · VLOOKUP / 数据透视表', 'SQL · MySQL', 'Python', 'Tableau', 'SPSS', 'ChatGPT 辅助代码优化'],
+    itemsKey: 'about.skillsCat1Items',
   },
   {
     icon: Sigma,
     color: '#B600A8',
     titleKey: 'about.skillsCat2',
     descKey: 'about.skillsCat2Desc',
-    items: ['概率论', '假设检验', '线性回归', '对比分析', 'A/B 测试', 'Bonferroni 校正'],
+    itemsKey: 'about.skillsCat2Items',
   },
   {
     icon: Languages,
     color: '#4F8CF7',
     titleKey: 'about.skillsCat3',
     descKey: 'about.skillsCat3Desc',
-    items: ['skillCet'],
-    isLang: true,
+    itemsKey: 'about.skillsCat3Items',
   },
 ]
 
@@ -165,9 +164,9 @@ export default function About() {
                     letterSpacing: '-0.01em',
                   }}
                 >
-                  <span className="hero-heading">用数据理解业务，</span>
+                  <span className="hero-heading">{t('about.taglineLine1')}</span>
                   <br />
-                  <span className="text-[#D7E2EA]/40">用洞察驱动决策。</span>
+                  <span className="text-[#D7E2EA]/40">{t('about.taglineLine2')}</span>
                 </motion.h2>
 
                 {/* Bio paragraphs */}
@@ -199,8 +198,8 @@ export default function About() {
                         }}
                       >
                         <img
-                          src="/江西财经大学logo.png"
-                          alt="江西财经大学"
+                          src="/jufe-logo.png"
+                          alt={t('about.edu1School')}
                           className="w-9 h-9 object-contain"
                         />
                       </div>
@@ -209,7 +208,7 @@ export default function About() {
                           {t('about.edu1School')}
                         </h4>
                         <p className="text-[#D7E2EA]/55 text-xs">
-                          {t('about.edu1Degree')} · 2022 – 2026
+                          {t('about.edu1Degree')} · {t('about.edu1Range')}
                         </p>
                       </div>
                     </div>
@@ -229,8 +228,8 @@ export default function About() {
                         }}
                       >
                         <img
-                          src="/南京理工大学logo.jpg"
-                          alt="南京理工大学"
+                          src="/njust-logo.jpg"
+                          alt={t('about.edu2School')}
                           className="w-9 h-9 object-contain"
                         />
                       </div>
@@ -239,7 +238,7 @@ export default function About() {
                           {t('about.edu2School')}
                         </h4>
                         <p className="text-[#D7E2EA]/55 text-xs">
-                          {t('about.edu2Degree')} · 2026 秋季
+                          {t('about.edu2Degree')} · {t('about.edu2Range')}
                         </p>
                       </div>
                     </div>
@@ -286,7 +285,7 @@ export default function About() {
                   </p>
 
                   <div className="flex flex-wrap gap-2 relative">
-                    {cat.items.map((item) => (
+                    {(t(cat.itemsKey, { returnObjects: true }) as string[]).map((item) => (
                       <span
                         key={item}
                         className="px-3 py-1.5 rounded-lg text-xs font-medium"
@@ -296,7 +295,7 @@ export default function About() {
                           color: '#D1D5DB',
                         }}
                       >
-                        {cat.isLang ? t(`about.${item}`) : item}
+                        {item}
                       </span>
                     ))}
                   </div>
@@ -321,7 +320,7 @@ export default function About() {
               }}
             >
               <BarChart3 size={18} />
-              查看项目作品
+              {t('about.ctaProjects')}
             </Link>
 
             <Link
@@ -329,7 +328,7 @@ export default function About() {
               className="inline-flex items-center gap-3 rounded-full border-2 border-[#D7E2EA]/25 px-10 py-4 text-base font-semibold tracking-wider text-[#D7E2EA] hover:border-[#D7E2EA]/55 transition-colors cursor-pointer select-none"
             >
               <Mail size={18} />
-              联系我
+              {t('about.ctaContact')}
             </Link>
           </motion.div>
       </motion.div>

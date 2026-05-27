@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { useTheme } from '../context/ThemeContext'
 
 const links = [
   { key: 'home', path: '/' },
@@ -14,7 +13,6 @@ const links = [
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
-  const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const isZh = i18n.language === 'zh'
@@ -89,13 +87,6 @@ export default function Navbar() {
             <span className={isZh ? 'text-[#B600A8]' : 'text-[#D7E2EA]/50'}>中</span>
             <span className="text-[#D7E2EA]/20">/</span>
             <span className={!isZh ? 'text-[#B600A8]' : 'text-[#D7E2EA]/50'}>EN</span>
-          </button>
-
-          <button
-            onClick={toggleTheme}
-            className="flex items-center justify-center w-9 h-9 rounded-full border border-[#D7E2EA]/20 hover:border-[#D7E2EA]/40 transition-colors cursor-pointer"
-          >
-            {theme === 'dark' ? <Moon size={15} /> : <Sun size={15} />}
           </button>
 
           <button

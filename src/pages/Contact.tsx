@@ -36,6 +36,7 @@ function ContactCard({
   href: string | null
   onCopy?: () => void
 }) {
+  const { t: tc } = useTranslation()
   const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
@@ -95,7 +96,7 @@ function ContactCard({
             ;(e.currentTarget as HTMLElement).style.borderColor = `${color}30`
           }}
         >
-          <span>{onCopy && copied ? '已复制 ✓' : actionLabel}</span>
+          <span>{onCopy && copied ? `${tc('contact.copied')} ✓` : actionLabel}</span>
           <ArrowRight size={13} />
         </Component>
       </div>
@@ -112,9 +113,9 @@ export default function Contact() {
   }
 
   const contacts = [
-    { icon: Mail, labelKey: 'contact.email', value: '15957232009@163.com', href: 'mailto:15957232009@163.com', color: '#38bdf8', actionLabel: '发送邮件', isCopy: false },
-    { icon: Phone, labelKey: 'contact.phone', value: '(+86) 15957232009', href: 'tel:+8615957232009', color: '#a855f7', actionLabel: '拨打电话', isCopy: false },
-    { icon: MessageCircle, labelKey: 'contact.wechat', value: 'jx00630705', href: null as string | null, color: '#10b981', actionLabel: '复制微信', isCopy: true },
+    { icon: Mail, labelKey: 'contact.email', value: '15957232009@163.com', href: 'mailto:15957232009@163.com', color: '#38bdf8', actionLabel: t('contact.actionMail'), isCopy: false },
+    { icon: Phone, labelKey: 'contact.phone', value: '(+86) 15957232009', href: 'tel:+8615957232009', color: '#a855f7', actionLabel: t('contact.actionCall'), isCopy: false },
+    { icon: MessageCircle, labelKey: 'contact.wechat', value: 'jx00630705', href: null as string | null, color: '#10b981', actionLabel: t('contact.actionCopy'), isCopy: true },
   ]
 
   return (
@@ -144,21 +145,21 @@ export default function Contact() {
               className="font-display font-extrabold text-white tracking-tighter leading-[1.05]"
               style={{ fontSize: 'clamp(2rem, 8vw, 7rem)' }}
             >
-              期待与您交流
+              {t('contact.title')}
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               className="text-white/60 max-w-2xl text-base md:text-lg leading-relaxed"
             >
-              如果您对我的背景感兴趣，或有合作机会、项目咨询，欢迎随时联系我。我会在 24 小时内回复您。
+              {t('contact.subtitle')}
             </motion.p>
           </div>
 
           {/* ── CTA button ── */}
           <motion.div variants={fadeUp}>
             <GlassButton href="/resume.pdf">
-              <p>查看简历</p>
+              <p>{t('contact.viewResume')}</p>
             </GlassButton>
           </motion.div>
 
