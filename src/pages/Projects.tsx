@@ -20,9 +20,10 @@ const fadeUp = {
 
 const projectKeys = ['project1', 'project2'] as const
 
+const BASE = import.meta.env.BASE_URL
 const imgMap: Record<string, string> = {
-  project1: '/project-beauty.jpg',
-  project2: '/project-game.jpg',
+  project1: BASE + 'project-beauty.jpg',
+  project2: BASE + 'project-game.jpg',
 }
 
 export default function Projects() {
